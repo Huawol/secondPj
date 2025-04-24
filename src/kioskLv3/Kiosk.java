@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Kiosk {
-    // 메뉴를 관리하는 클래스
+    // 메뉴,입력을 관리하는 클래스
     void run() {
         Scanner scanner = new Scanner(System.in);
         int num1 = 0;

@@ -1,7 +1,4 @@
-package kioskLv3;
-
-import java.util.ArrayList;
-import java.util.List;
+package kioskLv4;
 
 public class MenuItem {
     // 음식 정보관련 클래스
