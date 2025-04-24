@@ -24,6 +24,7 @@ public class KioskLv2 {
                 num1 = scanner.nextInt();
             } catch (InputMismatchException e) {
                 System.out.println("숫자를 입력해주세요");
+                return; // 두번째 실행결과에서 이거 안쓰면 한번 더 돌고 끝남
             }
 
             if (num1 == 1) {
@@ -41,6 +42,7 @@ public class KioskLv2 {
                     System.out.println("가격 : " + burger.price);
                     System.out.println("설명 : " + burger.explanation);
                 }
+                menuItems.clear(); // List는 누적 구조로 인해서 비워두지 않으면 계속 전에 있던 기록이 남아있음!!
 
             } else if (num1 == 2) {
 
@@ -58,6 +60,7 @@ public class KioskLv2 {
                     System.out.println("가격 : " + burger.price);
                     System.out.println("설명 : " + burger.explanation);
                 }
+                menuItems.clear();
 
             } else if (num1 == 3) {
 
@@ -75,6 +78,7 @@ public class KioskLv2 {
                     System.out.println("가격 : " + burger.price);
                     System.out.println("설명 : " + burger.explanation);
                 }
+                menuItems.clear();
 
             } else if (num1 != 0) {
                 System.out.println("다른 번호를 입력하셨습니다.");
