@@ -3,9 +3,10 @@ package kioskLv4;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Menu {
+public class Menu implements ListMain{
     // 리스트 관리 클래스
-    List<MenuItem> menuItems = new ArrayList<>();
+
+
 
     void burgerLists() {
         int i = 0;
@@ -17,7 +18,6 @@ public class Menu {
             i++;
             System.out.println(i+". "+food.name + " | W " + food.price + " | " + food.explanation);
         }
-        menuItems.clear();
     }
     void drinkLists() {
         int i = 0;
@@ -30,7 +30,6 @@ public class Menu {
             i++;
             System.out.println(i+". "+food.name + " | W " + food.price + " | " + food.explanation);
         }
-        menuItems.clear();
     }
     void dessertLists() {
         int i = 0;

@@ -1,8 +1,7 @@
 package kioskLv4;
 
-import java.util.ArrayList;
+
 import java.util.InputMismatchException;
-import java.util.List;
 import java.util.Scanner;
 
 public class Kiosk {
@@ -10,18 +9,19 @@ public class Kiosk {
     void run() {
         Scanner scanner = new Scanner(System.in);
         int num1 = 0;
-
-        Menu menu = new Menu();
+        BugerList bugerList = new BugerList();
+        DrinkList drinkList = new DrinkList();
+        DessertList dessertList = new DessertList();
         Select select = new Select();
 
         do {
-            System.out.println("[ SHAKESHACK MENU ]");
-            System.out.println("1. Hamburger");
-            System.out.println("2. Drink");
-            System.out.println("3. Dessert");
-            System.out.println("0.   종료    ");
-            System.out.print("choice : ");
-
+            System.out.print("""
+                    [ SHAKESHACK MENU ]
+                    1. Hamburger
+                    2. Drink
+                    3. Dessert
+                    0.   종료    
+                    choice : """);
             try {
                 num1 = scanner.nextInt();
             } catch (InputMismatchException e) {
@@ -31,14 +31,16 @@ public class Kiosk {
 
             switch (num1) {
                 case 1:
-                    menu.burgerLists();
-                    select.selectFood();
+                    bugerList.burgerLists();
+                    select.selectBFood();
                     break;
                 case 2:
-                    menu.drinkLists();
+                    drinkList.drinkLists();
+                    select.selectBFood();
                     break;
                 case 3:
-                    menu.dessertLists();
+                    dessertList.dessertLists();
+                    select.selectBFood();
                     break;
                 default:
                     System.out.println("숫자를 다시 입력해주세요");
