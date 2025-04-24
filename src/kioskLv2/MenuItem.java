@@ -5,18 +5,13 @@ import java.util.List;
 
 public class MenuItem {
     String name;
-    int price;
+    double price;
     String explanation;
     List<MenuItem> menuItems = new ArrayList<>();
 
-    MenuItem(String name, int price, String explanation) {
+    MenuItem(String name, double price, String explanation) {
         this.name = name;
         this.price = price;
         this.explanation = explanation;
-    }
-
-    MenuItem menu() {
-        System.out.println(this.name + ", " + this.price + ", "  + this.explanation);
-        return null;
     }
 }
