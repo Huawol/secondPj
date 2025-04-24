@@ -1,5 +1,6 @@
 package kioskLv1;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Kiosk {
@@ -15,7 +16,15 @@ public class Kiosk {
             System.out.println("0.   종료    ");
             System.out.print("choice : ");
 
-            num1 = scanner.nextInt();
+
+
+
+
+            try {
+                num1 = scanner.nextInt();
+            } catch (InputMismatchException e) {
+                System.out.println("숫자를 입력해주세요");
+            }
 
             if (num1 == 1) {
                 String hamPrintMenu = """
@@ -46,7 +55,7 @@ public class Kiosk {
                         4. 세트     | W 6.9 | 감자튀김과 버팔로 윙을 한번에!
                         """;
                 System.out.println(dessertPrintMenu);
-            } else {
+            } else if (num1 != 0) {
                 System.out.println("다른 번호를 입력하셨습니다.");
             }
 
