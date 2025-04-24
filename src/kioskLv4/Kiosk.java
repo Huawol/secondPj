@@ -10,8 +10,9 @@ public class Kiosk {
     void run() {
         Scanner scanner = new Scanner(System.in);
         int num1 = 0;
-        List<MenuItem> menuItems = new ArrayList<>();
+
         Menu menu = new Menu();
+        Select select = new Select();
 
         do {
             System.out.println("[ SHAKESHACK MENU ]");
@@ -31,12 +32,11 @@ public class Kiosk {
             switch (num1) {
                 case 1:
                     menu.burgerLists();
+                    select.selectFood();
                     break;
-
                 case 2:
                     menu.drinkLists();
                     break;
-
                 case 3:
                     menu.dessertLists();
                     break;
