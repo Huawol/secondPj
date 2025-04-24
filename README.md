@@ -1,4 +1,9 @@
+Pj kiosk 단계별 작성
+
+
 Lv 1 예외 처리 및 문제 오류 해결
+
 1.숫자를 입력받는 공간에 다른것이 들어와서 나오는 오류를 try-catch로 해결
-InputMismatchException 오류떴음
+InputMismatchException 오류가 발생했다.
+
 2. 햄버거, 음료, 디저트, 종료 에 해당하는 숫자를 입력하지 않으면 다음단계로 넘어가지 않던것을 해결
