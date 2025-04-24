@@ -3,7 +3,7 @@ package kioskLv1;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class Kiosk {
+public class KioskLv1 {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -15,10 +15,6 @@ public class Kiosk {
             System.out.println("3. Dessert");
             System.out.println("0.   종료    ");
             System.out.print("choice : ");
-
-
-
-
 
             try {
                 num1 = scanner.nextInt();
@@ -55,11 +51,11 @@ public class Kiosk {
                         4. 세트     | W 6.9 | 감자튀김과 버팔로 윙을 한번에!
                         """;
                 System.out.println(dessertPrintMenu);
+
             } else if (num1 != 0) {
                 System.out.println("다른 번호를 입력하셨습니다.");
             }
 
         } while (0 != num1);
-
     }
 }
