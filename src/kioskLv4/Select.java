@@ -14,10 +14,9 @@ public class Select implements ListMain{
         for(int j=0; j<4; j++) {
             i++;
             if (num1 == i) {
-                System.out.println(i + ". "+ menuItems.get(j).name + " | W " + menuItems.get(j).price + " | " + menuItems.get(j).explanation);
+                System.out.println(i + ". "+ menuItems.get(j).getName() + " | W " + menuItems.get(j).getPrice() + " | " + "설명 : " + menuItems.get(j).getExplanation());
             }
         }
         menuItems.clear();
-
     }
 }

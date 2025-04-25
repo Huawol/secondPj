@@ -5,7 +5,7 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Kiosk {
-    // 메뉴,입력을 관리하는 클래스
+    // 메인문에서 실행할 클래스
     void run() {
         Scanner scanner = new Scanner(System.in);
         int num1 = 0;
@@ -31,7 +31,7 @@ public class Kiosk {
 
             switch (num1) {
                 case 1:
-                    bugerList.burgerLists();
+                    bugerList.getBurgerLists();
                     select.selectBFood();
                     break;
                 case 2:

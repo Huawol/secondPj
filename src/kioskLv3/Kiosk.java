@@ -35,10 +35,8 @@ public class Kiosk {
                     menuItems.add(new MenuItem("SmokeShack", 8.9, "베이컨, 체리 페퍼에 쉑소스가 토핑된 치즈버거"));
                     menuItems.add(new MenuItem("Hamburger", 5.4, "비프패티를 기반으로 야채가 들어간 기본버거"));
 
-                    for (MenuItem burger : menuItems) {
-                        System.out.println("메뉴 : " + burger.name);
-                        System.out.println("가격 : " + burger.price);
-                        System.out.println("설명 : " + burger.explanation);
+                    for (MenuItem food : menuItems) {
+                        System.out.println("메뉴 : " + food.getName() + " | W " + food.getPrice() + " | " + "설명 : " + food.getExplanation());
                     }
                     menuItems.clear();
                     break;
@@ -49,10 +47,8 @@ public class Kiosk {
                     menuItems.add(new MenuItem("제로 콜라", 2.5, "제로 콜라는 역시 펩시!"));
                     menuItems.add(new MenuItem("제로 사이다", 2.5, "제로 사이다는 역시 칠성!"));
 
-                    for (MenuItem burger : menuItems) {
-                        System.out.println("메뉴 : " + burger.name);
-                        System.out.println("가격 : " + burger.price);
-                        System.out.println("설명 : " + burger.explanation);
+                    for (MenuItem food : menuItems) {
+                        System.out.println("메뉴 : " + food.getName() + " | W " + food.getPrice() + " | " + "설명 : " + food.getExplanation());
                     }
                     menuItems.clear();
                     break;
@@ -63,10 +59,8 @@ public class Kiosk {
                     menuItems.add(new MenuItem("버팔로 윙", 3.0, "오븐에 구운듯한 닭날개"));
                     menuItems.add(new MenuItem("세트", 6.9, "감자튀김과 버팔로 윙을 한번에!"));
 
-                    for (MenuItem burger : menuItems) {
-                        System.out.println("메뉴 : " + burger.name);
-                        System.out.println("가격 : " + burger.price);
-                        System.out.println("설명 : " + burger.explanation);
+                    for (MenuItem food : menuItems) {
+                        System.out.println("메뉴 : " + food.getName() + " | W " + food.getPrice() + " | " + "설명 : " + food.getExplanation());
                     }
                     menuItems.clear();
                     break;

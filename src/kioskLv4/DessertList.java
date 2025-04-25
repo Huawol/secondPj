@@ -10,7 +10,7 @@ public class DessertList implements ListMain{
 
         for (MenuItem food : menuItems) {
             i++;
-            System.out.println(i+". "+food.name + " | W " + food.price + " | " + food.explanation);
+            System.out.println(i + ". " + food.getName() + " | W " + food.getPrice() + " | " + "설명 : " + food.getExplanation());
         }
     }
 }

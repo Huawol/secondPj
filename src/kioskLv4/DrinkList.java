@@ -1,6 +1,6 @@
 package kioskLv4;
 
-public class DrinkList implements ListMain{
+public class DrinkList implements ListMain {
     void drinkLists() {
         int i = 0;
         menuItems.add(new MenuItem("콜라", 2.0, "콜라는 역시 코카콜라!"));
@@ -10,7 +10,7 @@ public class DrinkList implements ListMain{
 
         for (MenuItem food : menuItems) {
             i++;
-            System.out.println(i+". "+food.name + " | W " + food.price + " | " + food.explanation);
+            System.out.println(i + ". " + food.getName() + " | W " + food.getPrice() + " | " + "설명 : " + food.getExplanation());
         }
     }
 }
