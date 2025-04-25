@@ -6,6 +6,7 @@ import kioskLvChellenge.MenuItem;
 public class BugerList implements ListMain {
 
 
+
     private BugerList burgerLists() {
         int i = 0;
         menuItems.add(new MenuItem("ShackBurger", 6.9, "토마토, 양상추, 쉑소스가 토핑된 치즈버거"));

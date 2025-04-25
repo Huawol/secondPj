@@ -18,6 +18,7 @@ public class Kiosk implements ListMain{
         DessertList dessertList = new DessertList();
         Select select = new Select();
 
+
         do {
             System.out.print("""
                     [ SHAKESHACK MENU ]
@@ -33,7 +34,9 @@ public class Kiosk implements ListMain{
                 return; // 두번째 실행결과에서 이거 안쓰면 한번 더 돌고 끝남
             }
 
+            // 위치선정 굿!!
             menuItems.clear();
+
             switch (num1) {
                 case 1:
                     bugerList.getBurgerLists();

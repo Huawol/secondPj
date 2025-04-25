@@ -20,8 +20,9 @@ public class Select implements ListMain {
                         [ 선택된 메뉴 ]""");
                 System.out.println(i + ". "+ menuItems.get(j).getName() + " | W " + menuItems.get(j).getPrice() + " | " + "설명 : " + menuItems.get(j).getExplanation());
 
-                cartItems.add(i + ". "+ menuItems.get(j).getName() + " | W " + menuItems.get(j).getPrice() + " | " + "설명 : " + menuItems.get(j).getExplanation());
+                cartItems.add(menuItems.get(j));
                 cart.cartLists();
+                cart.totalPay();
             } else if (num1 == i-1) { // 0을 입력 받으면 kiosk 클래스로 돌아감, 그때 불러온 리스트는 초기화
                 menuItems.clear();
 
