@@ -35,7 +35,7 @@ public class Kiosk implements ListMain{
             }
 
             // 위치선정 굿!!
-            menuItems.clear();
+            /*menuItems.clear();*/
 
             switch (num1) {
                 case 1:
