@@ -1,7 +1,10 @@
-package kioskLvChellenge;
+package kioskLvChellenge.food;
+
+import kioskLvChellenge.ListMain;
+import kioskLvChellenge.MenuItem;
 
 public class DrinkList implements ListMain {
-    void drinkLists() {
+    private DrinkList drinkLists() {
         int i = 0;
         menuItems.add(new MenuItem("콜라", 2.0, "콜라는 역시 코카콜라!"));
         menuItems.add(new MenuItem("사이다", 2.0, "사이다는 역시 칠성!"));
@@ -13,5 +16,9 @@ public class DrinkList implements ListMain {
             System.out.println(i + ". " + food.getName() + " | W " + food.getPrice() + " | " + "설명 : " + food.getExplanation());
         }
         System.out.println("0. 뒤로가기");
+        return null;
+    }
+    public DrinkList getDrinkList() {
+        return drinkLists();
     }
 }

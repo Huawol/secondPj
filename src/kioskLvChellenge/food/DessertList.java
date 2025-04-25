@@ -1,7 +1,10 @@
-package kioskLvChellenge;
+package kioskLvChellenge.food;
+
+import kioskLvChellenge.ListMain;
+import kioskLvChellenge.MenuItem;
 
 public class DessertList implements ListMain {
-    void dessertLists() {
+    private DessertList dessertLists() {
         int i = 0;
         menuItems.add(new MenuItem("감자튀김", 4.0, "바삭하고 짭짤한 감자튀김"));
         menuItems.add(new MenuItem("치즈 감자튀김", 4.5, "치즈에 빠진 바삭 짭짤 감자튀김"));
@@ -13,5 +16,9 @@ public class DessertList implements ListMain {
             System.out.println(i + ". " + food.getName() + " | W " + food.getPrice() + " | " + "설명 : " + food.getExplanation());
         }
         System.out.println("0. 뒤로가기");
+        return null;
+    }
+    public DessertList getDessertLists() {
+        return dessertLists();
     }
 }

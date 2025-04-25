@@ -1,6 +1,10 @@
-package kioskLvChellenge;
+package kioskLvChellenge.food;
+
+import kioskLvChellenge.ListMain;
+import kioskLvChellenge.MenuItem;
 
 public class BugerList implements ListMain {
+
 
     private BugerList burgerLists() {
         int i = 0;

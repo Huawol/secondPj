@@ -4,6 +4,11 @@ public class Cart implements ListMain{
 
     void cartLists() {
         System.out.println("[ 장바구니 내역 ]");
-        System.out.println(cartItems);
+        for (String cartItem : cartItems) {
+            System.out.println(cartItem);
+        }
+        System.out.println();
     }
+
+
 }

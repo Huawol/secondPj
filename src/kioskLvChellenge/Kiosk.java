@@ -1,11 +1,15 @@
 package kioskLvChellenge;
 
 
+import kioskLvChellenge.food.BugerList;
+import kioskLvChellenge.food.DessertList;
+import kioskLvChellenge.food.DrinkList;
+
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class Kiosk {
-    // 메인문에서 실행할 클래스
+public class Kiosk implements ListMain{
+    // TODO 메인문에서 실행할 클래스
     void run() {
         Scanner scanner = new Scanner(System.in);
         int num1 = 0;
@@ -29,22 +33,23 @@ public class Kiosk {
                 return; // 두번째 실행결과에서 이거 안쓰면 한번 더 돌고 끝남
             }
 
+            menuItems.clear();
             switch (num1) {
                 case 1:
                     bugerList.getBurgerLists();
                     select.selectBFood();
                     break;
                 case 2:
-                    drinkList.drinkLists();
+                    drinkList.getDrinkList();
                     select.selectBFood();
                     break;
                 case 3:
-                    dessertList.dessertLists();
+                    dessertList.getDessertLists();
                     select.selectBFood();
                     break;
                 case 0:
                     System.out.println("종료됩니다.");
-                    return;
+                    break;
                 default:
                     System.out.println("숫자를 다시 입력해주세요");
             }

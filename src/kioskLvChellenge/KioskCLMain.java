@@ -1,6 +1,6 @@
 package kioskLvChellenge;
 
-public class KioskCL {
+public class KioskCLMain {
 
     public static void main(String[] args) {
         Kiosk kiosk = new Kiosk();

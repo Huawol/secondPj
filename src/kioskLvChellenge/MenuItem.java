@@ -7,7 +7,7 @@ public class MenuItem {
     private String explanation;
 
 
-    MenuItem(String name, double price, String explanation) {
+    public MenuItem(String name, double price, String explanation) {
         this.name = name;
         this.price = price;
         this.explanation = explanation;
@@ -19,6 +19,7 @@ public class MenuItem {
     public String getName() {
         return name;
     }
+
 
     public String getExplanation() {
         return explanation;
