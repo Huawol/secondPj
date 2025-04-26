@@ -1,10 +1,10 @@
 package kioskLvChellenge;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public interface ListMain {
     List<MenuItem> menuItems = new ArrayList<>(); //
-    List<MenuItem> cartItems = new ArrayList<>(); // cart클래스에서 사용중
+    Map<String, Double> cartItems = new HashMap<>(); // cart클래스에서 사용중
+    Scanner scanner = new Scanner(System.in);
 
 }

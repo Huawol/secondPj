@@ -12,6 +12,7 @@ public class MenuItem {
         this.price = price;
         this.explanation = explanation;
     }
+
     public double getPrice() {
         return price;
     }
