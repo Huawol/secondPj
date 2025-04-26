@@ -3,6 +3,7 @@ package kioskLvChellenge;
 public class Food implements ListMain { // 음식의 객체를 담을 리스트
 
     Cart cart = new Cart();
+
     void burger() {
         menuItems.add(new MenuItem("ShackBurger", 6.9, "토마토, 양상추, 쉑소스가 토핑된 치즈버거"));
         menuItems.add(new MenuItem("Cheeseburger", 6.9, "포테이토 번과 비프패티, 치즈가 토핑된 치즈버거"));
@@ -54,8 +55,8 @@ public class Food implements ListMain { // 음식의 객체를 담을 리스트
             }
         }
 
-        cartItems.put(menuItems.get(num1).getName(),menuItems.get(num1).getPrice()); // cartItems에 menuItems리스트를 .get(j)해서 j번째꺼를 가져온 다음에 추가함
-        cart.cartLists(); // cart 클래스에 메뉴 저장하는 메소드
+        cartItems.put(menuItems.get(num1).getName(), menuItems.get(num1).getPrice()); // cartItems에 menuItems리스트를 .get(j)해서 j번째꺼를 가져온 다음에 추가함
+        cart.cartList(); // cart 클래스에 메뉴 저장하는 메소드
         cart.totalPay();
     }
 

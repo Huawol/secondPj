@@ -4,10 +4,9 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 
-public class Kiosk implements ListMain{
+public class Kiosk implements ListMain {
     // 메인문에서 실행할 클래스
     void run() {
-        Scanner scanner = new Scanner(System.in);
         int num1 = 0;
         Food food = new Food();
         food.burger();

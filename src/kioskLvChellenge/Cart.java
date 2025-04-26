@@ -3,7 +3,7 @@ package kioskLvChellenge;
 public class Cart implements ListMain {
     private double num1 = 0;
 
-    void cartLists() {
+    void cartList() {
         System.out.println("[ 장바구니 내역 ]");
 
         System.out.println("음식 : " + cartItems.keySet() + " | W " + cartItems.values());
