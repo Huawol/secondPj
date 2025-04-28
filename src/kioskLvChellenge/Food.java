@@ -3,7 +3,6 @@ package kioskLvChellenge;
 public class Food implements ListMain { // 음식의 객체를 담을 리스트
 
 
-
     public void burger() {
         menuItems.add(new MenuItem("burger", "ShackBurger", 6.9, "토마토, 양상추, 쉑소스가 토핑된 치즈버거"));
         menuItems.add(new MenuItem("burger", "Cheeseburger", 6.9, "포테이토 번과 비프패티, 치즈가 토핑된 치즈버거"));
@@ -28,43 +27,56 @@ public class Food implements ListMain { // 음식의 객체를 담을 리스트
     // 출력 메소드
     public void printFood(String category) {
         int i = 0;
-
-        for (MenuItem cf : menuItems) {
-            if (cf.getFood().equals(category)) { // 선택한 메뉴에 맞는거만 출력
+        System.out.println("[ MENU ]");
+        for (MenuItem printFood : menuItems) {
+            if (printFood.getCategory().equals(category)) { // 선택한 메뉴에 맞는거만 출력
                 i++;
-                System.out.println(i + ". " + cf.getName() + " | W " + cf.getPrice() + " | " + "설명 : " + cf.getExplanation());
+                System.out.println(i + ". " + printFood.getName() + " | W " + printFood.getPrice() + " | " + "설명 : " + printFood.getExplanation());
             }
         }
         System.out.println("0. 뒤로가기");
     }
+
     // 선택 메소드
     public void selectFood(String category) {
         int i = 0, num1 = 0;
 
-        System.out.print("메뉴를 선택해주세요 : "); // 4번 말고 다른 번호를 누르면 (12번까지는 출력됨) 해당 음식이 나오는 버그가 있음
+        System.out.print("메뉴를 선택해주세요 : ");
         num1 = scanner.nextInt();
 
-        if (num1 == 0) {
+        if (num1 == 0) { // 0 누르면 카테고리 메뉴로 돌아감
             return;
         }
 
-        for (MenuItem pf : menuItems) {
-            if (pf.getFood().equals(category)) {
+        for (MenuItem selectFood : menuItems) {
+            if (selectFood.getCategory().equals(category)) {
                 i++;
                 if (num1 == i) {
                     System.out.println("""
                             
                             [ 선택된 메뉴 ]""");
 
-                    System.out.println(i + ". " + pf.getName()
-                            + " | W " + pf.getPrice() + " | "
-                            + "설명 : " + pf.getExplanation());
-                    cartItems.put(pf.getName(), pf.getPrice());
+                    System.out.println(i + ". " + selectFood.getName()
+                            + " | W " + selectFood.getPrice() + " | "
+                            + "설명 : " + selectFood.getExplanation());
+                    System.out.println("test");
+                }
+                System.out.print("""
+                            장바구니에 담겠습니까?
+                            1. 예 2. 아니오
+                            ====== 선택 : """);
+                int select = scanner.nextInt();
+                if(select == 1) {
+                    cartItems.put(selectFood.getName(), selectFood.getPrice());
+                    System.out.println("""
+                            장바구니에 추가되었습니다!!
+                            """);
+                    return;
+                } else if (select == 2) {
+                    return;
                 }
             }
         }
 
     }
-
-
 }

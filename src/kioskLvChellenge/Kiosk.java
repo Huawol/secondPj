@@ -15,23 +15,13 @@ public class Kiosk implements ListMain {
         food.drink();
 
         do {
-            System.out.print("""
-                    [ SHAKESHACK MENU ]
-                    1. Hamburger
-                    2. Drink
-                    3. Dessert
-                    0.   종료    
-                    choice : """);
+            mainPrint();
             try {
                 num1 = scanner.nextInt();
             } catch (InputMismatchException e) {
                 System.out.println("숫자를 입력해주세요");
             }
             System.out.println();
-            cart.cartListPrint(); // 장바구니 메소드
-            cart.totalPay();
-
-
 
             switch (num1) {
                 case 1:
@@ -49,11 +39,38 @@ public class Kiosk implements ListMain {
                 case 0:
                     System.out.println("종료됩니다.");
                     break;
+                case 4:
+                    cart.cartListPrint(); // 장바구니 메소드
+                    cart.totalPay();
+                    break;
                 default:
                     System.out.println("숫자를 다시 입력해주세요");
             }
 
         }
         while (0 != num1);
+    }
+
+    // 메뉴출력문
+    void mainPrint() {
+
+        if (!cartItems.isEmpty()) {
+            System.out.print("""
+                    [ SHAKESHACK MENU ]
+                    1. Hamburger
+                    2. Drink
+                    3. Dessert
+                    4. 장바구니
+                    0.   종료    
+                    choice : """);
+        } else {
+            System.out.print("""
+                    [ SHAKESHACK MENU ]
+                    1. Hamburger
+                    2. Drink
+                    3. Dessert
+                    0.   종료    
+                    choice : """);
+        }
     }
 }

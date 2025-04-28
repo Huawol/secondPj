@@ -2,14 +2,14 @@ package kioskLvChellenge;
 
 public class MenuItem {
     // 음식 정보관련 클래스
-    private String food;
-    private String name;
-    private double price;
-    private String explanation;
+    private final String category;
+    private final String name;
+    private final double price;
+    private final String explanation;
 
 
-    public MenuItem(String food, String name, double price, String explanation) {
-        this.food = food;
+    public MenuItem(String category, String name, double price, String explanation) {
+        this.category = category;
         this.name = name;
         this.price = price;
         this.explanation = explanation;
@@ -28,7 +28,7 @@ public class MenuItem {
         return explanation;
     }
 
-    public String getFood() {
-        return food;
+    public String getCategory() {
+        return category;
     }
 }
