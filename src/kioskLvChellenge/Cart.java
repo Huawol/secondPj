@@ -19,15 +19,19 @@ public class Cart implements ListMain {
         // %.1f double로 더하는데 뒤에 이상한 값이 나와서 소숫점 1의 자리까지만 출력하도록 제한을 둠
         System.out.printf("총 금액 : %.1f\n", num);
 
-        /*System.out.print("""
+        System.out.print("""
                 결제하시겠습니까?
                 1.결제 하기 2. 뒤로 가기 : """);
         int select = scanner.nextInt();
         if (select == 2) {
             return;
+        } else if (select == 1) {
+            System.out.println("주문이 완료 되었습니다. 금액은 " + num + "입니다");
+            cartItems.clear();
         }
-        if (select == 1) {
-            System.out.println("결제완");
-        }*/
+    }
+
+    public void disCountPay() {
+
     }
 }

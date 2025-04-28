@@ -49,6 +49,7 @@ public class Food implements ListMain { // 음식의 객체를 담을 리스트
         }
 
         for (MenuItem selectFood : menuItems) {
+
             if (selectFood.getCategory().equals(category)) {
                 i++;
                 if (num1 == i) {
@@ -59,24 +60,30 @@ public class Food implements ListMain { // 음식의 객체를 담을 리스트
                     System.out.println(i + ". " + selectFood.getName()
                             + " | W " + selectFood.getPrice() + " | "
                             + "설명 : " + selectFood.getExplanation());
-                    System.out.println("test");
-                }
-                System.out.print("""
+
+                    ////////// 장바구니 기능 /////////
+                    System.out.print("""
                             장바구니에 담겠습니까?
                             1. 예 2. 아니오
-                            ====== 선택 : """);
-                int select = scanner.nextInt();
-                if(select == 1) {
-                    cartItems.put(selectFood.getName(), selectFood.getPrice());
-                    System.out.println("""
-                            장바구니에 추가되었습니다!!
-                            """);
-                    return;
-                } else if (select == 2) {
-                    return;
+                            ====== 선택 :""");
+                    int select = scanner.nextInt();
+                    if (select == 1) {
+                        cartItems.put(selectFood.getName(), selectFood.getPrice());
+                        System.out.println("""
+                                장바구니에 추가되었습니다!!
+                                """);
+                        for (String key : cartItems.keySet()) {
+                            if (selectFood.getName().equals(key)) {
+                                map.put(key, map.getOrDefault(key,  0) + 1);
+                            }
+                        }
+                        System.out.println("map = " + map);
+                        return;
+                    } else if (select == 2) {
+                        return;
+                    }
                 }
             }
         }
-
     }
 }
