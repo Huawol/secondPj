@@ -8,8 +8,8 @@ public class MenuItem {
     private String explanation;
 
 
-    public MenuItem(String food,String name, double price, String explanation) {
-        this.food =food;
+    public MenuItem(String food, String name, double price, String explanation) {
+        this.food = food;
         this.name = name;
         this.price = price;
         this.explanation = explanation;

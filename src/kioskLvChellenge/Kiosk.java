@@ -9,9 +9,11 @@ public class Kiosk implements ListMain {
     void run() {
         int num1 = 0;
         Food food = new Food();
+        Cart cart = new Cart();
         food.burger();
         food.dessert();
         food.drink();
+
         do {
             System.out.print("""
                     [ SHAKESHACK MENU ]
@@ -25,19 +27,24 @@ public class Kiosk implements ListMain {
             } catch (InputMismatchException e) {
                 System.out.println("숫자를 입력해주세요");
             }
+            System.out.println();
+            cart.cartListPrint(); // 장바구니 메소드
+            cart.totalPay();
+
+
 
             switch (num1) {
                 case 1:
                     food.printFood("burger");
-                    food.selectFood();
+                    food.selectFood("burger");
                     break;
                 case 2:
                     food.printFood("drink");
-                    food.selectFood();
+                    food.selectFood("drink");
                     break;
                 case 3:
                     food.printFood("dessert");
-                    food.selectFood();
+                    food.selectFood("dessert");
                     break;
                 case 0:
                     System.out.println("종료됩니다.");
@@ -45,6 +52,7 @@ public class Kiosk implements ListMain {
                 default:
                     System.out.println("숫자를 다시 입력해주세요");
             }
+
         }
         while (0 != num1);
     }
