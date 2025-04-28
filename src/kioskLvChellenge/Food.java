@@ -1,7 +1,10 @@
 package kioskLvChellenge;
 
-public class Food implements ListMain { // 음식의 객체를 담을 리스트
+import java.util.HashMap;
+import java.util.Map;
 
+public class Food implements ListMain { // 음식의 객체를 담을 리스트
+    Map<String, Integer> map = new HashMap<>();
 
     public void burger() {
         menuItems.add(new MenuItem("burger", "ShackBurger", 6.9, "토마토, 양상추, 쉑소스가 토핑된 치즈버거"));
@@ -39,7 +42,8 @@ public class Food implements ListMain { // 음식의 객체를 담을 리스트
 
     // 선택 메소드
     public void selectFood(String category) {
-        int i = 0, num1 = 0;
+        int i = 0;
+        int num1;
 
         System.out.print("메뉴를 선택해주세요 : ");
         num1 = scanner.nextInt();
