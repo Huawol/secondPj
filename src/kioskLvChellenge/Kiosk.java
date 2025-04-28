@@ -28,15 +28,15 @@ public class Kiosk implements ListMain {
 
             switch (num1) {
                 case 1:
-                    food.printFood();
+                    food.printFood("burger");
                     food.selectFood();
                     break;
                 case 2:
-                    food.printFood();
+                    food.printFood("drink");
                     food.selectFood();
                     break;
                 case 3:
-                    food.printFood();
+                    food.printFood("dessert");
                     food.selectFood();
                     break;
                 case 0:
