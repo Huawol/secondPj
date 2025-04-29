@@ -7,9 +7,11 @@ public class Kiosk implements ListMain {
     // 메인문에서 실행할 클래스
     void run() {
         int num1 = 0;
-        Food food = new Food();
+
         Cart cart = new Cart();
+        Food food = new Food(cart);
         food.foodcategory();
+
 
         do {
             mainPrint();
@@ -37,7 +39,9 @@ public class Kiosk implements ListMain {
                     System.out.println("종료됩니다.");
                     break;
                 case 4:
-                    cart.cartListPrint(); // 장바구니 메소드
+                    cart.cartPrintEdit(); // 장바구니 메소드
+                    break;
+                case 5:
                     cart.totalPay();
                     break;
                 default:
@@ -59,6 +63,7 @@ public class Kiosk implements ListMain {
                     2. Drink
                     3. Dessert
                     4. 장바구니
+                    5. 결제
                     0.   종료    
                     choice : """);
         } else {
