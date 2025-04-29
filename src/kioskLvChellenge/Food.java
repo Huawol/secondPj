@@ -1,12 +1,36 @@
 package kioskLvChellenge;
 
-import java.util.HashMap;
-import java.util.Map;
+
+import java.util.List;
+
 
 public class Food implements ListMain { // 음식의 객체를 담을 리스트
-    Map<String, Integer> map = new HashMap<>();
 
-    public void burger() {
+    Cart cart = new Cart();
+
+    public void foodcategory() {
+        menuItems.put("burger", List.of(
+                new MenuItem("ShackBurger", 6.9, "토마토, 양상추, 쉑소스가 토핑된 치즈버거"),
+                new MenuItem("Cheeseburger", 6.9, "포테이토 번과 비프패티, 치즈가 토핑된 치즈버거"),
+                new MenuItem("SmokeShack", 8.9, "베이컨, 체리 페퍼에 쉑소스가 토핑된 치즈버거"),
+                new MenuItem("Hamburger", 5.4, "비프패티를 기반으로 야채가 들어간 기본버거")
+        ));
+        menuItems.put("drink", List.of(
+                new MenuItem("콜라", 2.0, "콜라는 역시 코카콜라!"),
+                new MenuItem("사이다", 2.0, "사이다는 역시 칠성!"),
+                new MenuItem("제로 콜라", 2.5, "제로 콜라는 역시 펩시!"),
+                new MenuItem("제로 사이다", 2.5, "제로 사이다는 역시 칠성!")
+        ));
+        menuItems.put("dessert", List.of(
+                new MenuItem("감자튀김", 4.0, "바삭하고 짭짤한 감자튀김"),
+                new MenuItem("치즈 감자튀김", 4.5, "치즈에 빠진 바삭 짭짤 감자튀김"),
+                new MenuItem("버팔로 윙", 3.0, "오븐에 구운듯한 닭날개"),
+                new MenuItem("세트", 6.9, "감자튀김과 버팔로 윙을 한번에!")
+        ));
+
+    }
+    //음식 모음
+    /*public void burger() {
         menuItems.add(new MenuItem("burger", "ShackBurger", 6.9, "토마토, 양상추, 쉑소스가 토핑된 치즈버거"));
         menuItems.add(new MenuItem("burger", "Cheeseburger", 6.9, "포테이토 번과 비프패티, 치즈가 토핑된 치즈버거"));
         menuItems.add(new MenuItem("burger", "SmokeShack", 8.9, "베이컨, 체리 페퍼에 쉑소스가 토핑된 치즈버거"));
@@ -25,33 +49,66 @@ public class Food implements ListMain { // 음식의 객체를 담을 리스트
         menuItems.add(new MenuItem("dessert", "치즈 감자튀김", 4.5, "치즈에 빠진 바삭 짭짤 감자튀김"));
         menuItems.add(new MenuItem("dessert", "버팔로 윙", 3.0, "오븐에 구운듯한 닭날개"));
         menuItems.add(new MenuItem("dessert", "세트", 6.9, "감자튀김과 버팔로 윙을 한번에!"));
-    }
+    }*/
 
     // 출력 메소드
+    /*public void printFood(String category) {
+        int i = 0;
+        System.out.println("[ MENU ]");
+        for (MenuItem printFood : test) {
+            if (test.keySet().equals(category)) { // 선택한 메뉴에 맞는거만 출력
+                i++;
+                System.out.println(i + ". " + printFood.getName() + " | W " + printFood.getPrice() + " | " + "설명 : " + printFood.getExplanation());
+            }
+        }
+
+        System.out.println("0. 뒤로가기");
+    }*/
+
+    // 새로운 출력 메소드
     public void printFood(String category) {
         int i = 0;
         System.out.println("[ MENU ]");
-        for (MenuItem printFood : menuItems) {
-            if (printFood.getCategory().equals(category)) { // 선택한 메뉴에 맞는거만 출력
+        if (menuItems.containsKey(category)) {
+            List<MenuItem> items = menuItems.get(category);
+            for (MenuItem item : items) {
                 i++;
-                System.out.println(i + ". " + printFood.getName() + " | W " + printFood.getPrice() + " | " + "설명 : " + printFood.getExplanation());
+                System.out.println(i + ". " + item.getName() + " | W " + item.getPrice() + " |  설명 :" + item.getExplanation());
             }
         }
         System.out.println("0. 뒤로가기");
     }
 
-    // 선택 메소드
+    // 새로운 선택 메소드
     public void selectFood(String category) {
+        System.out.print("메뉴를 선택해주세요 : ");
+        int num1 = scanner.nextInt();
+
+        int i = 0;
+        List<MenuItem> items = menuItems.get(category);
+        for (MenuItem item : items) {
+            i++;
+            if (num1 == i) {
+                System.out.println("""
+                        
+                        [ 선택된 메뉴 ]""");
+                System.out.println(i + ". " + item.getName()
+                        + " | W " + item.getPrice() + " |  설명 :"
+                        + item.getExplanation());
+                cartItems.put(item.getName(), item.getPrice());
+                cart.cartAdd(item.getName(), item.getPrice());
+            }
+        }
+    }
+
+
+    // 선택 메소드
+    /*public void selectFood(String category) {
         int i = 0;
         int num1;
 
         System.out.print("메뉴를 선택해주세요 : ");
         num1 = scanner.nextInt();
-
-        if (num1 == 0) { // 0 누르면 카테고리 메뉴로 돌아감
-            return;
-        }
-
         for (MenuItem selectFood : menuItems) {
 
             if (selectFood.getCategory().equals(category)) {
@@ -78,10 +135,10 @@ public class Food implements ListMain { // 음식의 객체를 담을 리스트
                                 """);
                         for (String key : cartItems.keySet()) {
                             if (selectFood.getName().equals(key)) {
-                                map.put(key, map.getOrDefault(key,  0) + 1);
+                                countDuplication.put(key, countDuplication.getOrDefault(key,  0) + 1);
                             }
                         }
-                        System.out.println("map = " + map);
+                        System.out.println("map = " + countDuplication);
                         return;
                     } else if (select == 2) {
                         return;
@@ -89,5 +146,5 @@ public class Food implements ListMain { // 음식의 객체를 담을 리스트
                 }
             }
         }
-    }
+    }*/
 }

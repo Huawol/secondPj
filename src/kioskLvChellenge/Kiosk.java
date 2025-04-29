@@ -9,9 +9,7 @@ public class Kiosk implements ListMain {
         int num1 = 0;
         Food food = new Food();
         Cart cart = new Cart();
-        food.burger();
-        food.dessert();
-        food.drink();
+        food.foodcategory();
 
         do {
             mainPrint();
