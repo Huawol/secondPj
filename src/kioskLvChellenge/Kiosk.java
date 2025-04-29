@@ -53,6 +53,7 @@ public class Kiosk implements ListMain {
 
         if (!cartItems.isEmpty()) {
             System.out.print("""
+                    
                     [ SHAKESHACK MENU ]
                     1. Hamburger
                     2. Drink
@@ -62,6 +63,7 @@ public class Kiosk implements ListMain {
                     choice : """);
         } else {
             System.out.print("""
+                    
                     [ SHAKESHACK MENU ]
                     1. Hamburger
                     2. Drink

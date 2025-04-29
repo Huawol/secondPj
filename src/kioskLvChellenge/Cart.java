@@ -4,6 +4,7 @@ import java.util.Map;
 
 public class Cart implements ListMain {
     int select = 0;
+
     void cartListPrint() {
         System.out.println("[ 장바구니 내역 ]");
         for (Map.Entry<String, Double> test : cartItems.entrySet()) {
@@ -17,18 +18,31 @@ public class Cart implements ListMain {
                 1. 예 2. 아니오
                 ====== 선택 :""");
         select = scanner.nextInt();
-        if (select == 1) {
 
+        if (select == 1) {
             System.out.println("""
-                            장바구니에 추가되었습니다!!
-                            """);
-            for (String keychoice : cartItems.keySet()) {
-                if (cartItems.containsKey(keychoice)) {
-                    countDuplication.put(keychoice, countDuplication.getOrDefault(keychoice, 0) + 1);
-                    System.out.println("asdf");
-                }
-            }
-            System.out.println("map = " + countDuplication);
+                    장바구니에 추가되었습니다!!
+                    """);
+            cartItems.put(name, price);
+            /*for (String key : cartItems.keySet()) {
+                if (cartItems.containsKey(key)) {*/
+            countDuplication.put(name, countDuplication.getOrDefault(name, 0) + 1);
+            System.out.println("[ 장바구니에 담긴 음식 ]");
+            cartEdit();
+                /*}
+            }*/
+            /*System.out.println("map = " + countDuplication.values());
+            System.out.println("[ 장바구니에 담긴 내용 ] \n" + countDuplication.keySet()
+                    + "*" + countDuplication.values());*/
+        }
+    }
+
+    public void cartEdit() {
+        for (Map.Entry<String, Integer> stringIntegerEntry : countDuplication.entrySet()) {
+            String name = stringIntegerEntry.getKey();
+            int count = stringIntegerEntry.getValue();
+
+            System.out.println(count + " | "+name);
         }
     }
 
@@ -60,9 +74,9 @@ public class Cart implements ListMain {
                 ====== 선택 : """);
         select = scanner.nextInt();
         switch (select) {
-            case 1 -> System.out.println("국가 유공자 할인이 적용되었습니다. 금액 : %.1f" + (totalprice*0.9));
-            case 2 -> System.out.println("군인 할인이 적용되었습니다. 금액 %.1f: " + (totalprice*0.95));
-            case 3 -> System.out.println("학생 할인이 적용되었습니다. 금액 %.1f: " + (totalprice*0.97));
+            case 1 -> System.out.println("국가 유공자 할인이 적용되었습니다. 금액 : " + (totalprice * 0.9));
+            case 2 -> System.out.println("군인 할인이 적용되었습니다. 금액 : " + (totalprice * 0.95));
+            case 3 -> System.out.println("학생 할인이 적용되었습니다. 금액 : " + (totalprice * 0.97));
             case 4 -> System.out.println("결제 되었습니다. 금액 : " + totalprice);
             default -> System.out.println("다른걸 입력하셨습니다.");
         }

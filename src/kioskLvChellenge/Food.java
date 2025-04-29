@@ -95,7 +95,6 @@ public class Food implements ListMain { // 음식의 객체를 담을 리스트
                 System.out.println(i + ". " + item.getName()
                         + " | W " + item.getPrice() + " |  설명 :"
                         + item.getExplanation());
-                cartItems.put(item.getName(), item.getPrice());
                 cart.cartAdd(item.getName(), item.getPrice());
             }
         }
