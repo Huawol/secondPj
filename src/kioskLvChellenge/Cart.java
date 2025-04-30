@@ -6,8 +6,7 @@ public class Cart implements ListMain {
     private int select = 0;
     double sumResult;
 
-
-    // 장바구니에 담을지 말지 고민하는 메서드
+    // 장바구니에 담을지 말지 선택하는 메서드
     void cartAdd(String name, double price) {
         System.out.print("""
                 장바구니에 담겠습니까?
@@ -26,44 +25,36 @@ public class Cart implements ListMain {
         }
     }
 
+    // 장바구니 출력메소드
     public void cartPrintEdit() {
         sumResult = 0;
         for (Map.Entry<String, Integer> countDuplication : countDuplication.entrySet()) {
             String name = countDuplication.getKey();
             int count = countDuplication.getValue();
-            double a = cartItems.get(name);
+            double a = cartItems.get(name); // name(키)에 맞는 값 가져오기
             System.out.printf(count + " | " + name + " : %.2f%n", count * a);
             sumResult += count * a;
         }
-        System.out.printf("총 금액 : %.1f%n", sumResult);
+        System.out.printf("총 금액 : %.2f%n", sumResult);
     }
 
-    // 5번(결제버튼) 누르면 실행됨
+    // 5번(결제버튼) 누르면 실행되는 메서드
     public void totalPay() {
-
-        // %.1f double로 더하는데 뒤에 이상한 값이 나와서 소숫점 1의 자리까지만 출력하도록 제한을 둠
-
         System.out.println(sumResult);
         System.out.print("""
+                [ 결제 ]
                 결제하시겠습니까?
                 1.결제 하기 2. 뒤로 가기 :""");
         select = scanner.nextInt();
         if (select == 1) {
             disCountPay();
+            // 결제가 다 되면 안에 담긴 값을 지워줘야함
             cartItems.clear();
             countDuplication.clear();
         }
     }
 
-    public void uiPay() {
-        for (Map.Entry<String, Integer> countDuplication : countDuplication.entrySet()) {
-            String name = countDuplication.getKey();
-            int count = countDuplication.getValue();
-            double a = cartItems.get(name);
-            System.out.println(count + " | " + name + ": " + a);
-        }
-    }
-
+    // 결제 금액 메서드
     public void disCountPay() {
         double totalprice = sumResult;
         System.out.print("""

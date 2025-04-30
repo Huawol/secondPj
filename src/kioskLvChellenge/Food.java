@@ -4,17 +4,17 @@ package kioskLvChellenge;
 import java.util.List;
 
 
-public class Food implements ListMain { // 음식의 객체를 담을 리스트
-
-    //////////// TODO 나경님 기여도 1000%
-    // 큰 이슈 해결!
+public class Food implements ListMain {
+    // 속성
     Cart cart;
 
+    // 생성자
     Food (Cart cart) {
         this.cart = cart;
     }
-    /////////////
 
+    // 기능
+    // 음식 리스트
     public void foodcategory() {
         menuItems.put("burger", List.of(
                 new MenuItem("ShackBurger", 6.9, "토마토, 양상추, 쉑소스가 토핑된 치즈버거"),
@@ -34,23 +34,7 @@ public class Food implements ListMain { // 음식의 객체를 담을 리스트
                 new MenuItem("버팔로 윙", 3.0, "오븐에 구운듯한 닭날개"),
                 new MenuItem("세트", 6.9, "감자튀김과 버팔로 윙을 한번에!")
         ));
-
     }
-
-
-    // 출력 메소드
-    /*public void printFood(String category) {
-        int i = 0;
-        System.out.println("[ MENU ]");
-        for (MenuItem printFood : test) {
-            if (test.keySet().equals(category)) { // 선택한 메뉴에 맞는거만 출력
-                i++;
-                System.out.println(i + ". " + printFood.getName() + " | W " + printFood.getPrice() + " | " + "설명 : " + printFood.getExplanation());
-            }
-        }
-
-        System.out.println("0. 뒤로가기");
-    }*/
 
     // 새로운 출력 메소드
     public void printFood(String category) {
@@ -86,51 +70,4 @@ public class Food implements ListMain { // 음식의 객체를 담을 리스트
             }
         }
     }
-
-
-    // 선택 메소드
-    /*public void selectFood(String category) {
-        int i = 0;
-        int num1;
-
-        System.out.print("메뉴를 선택해주세요 : ");
-        num1 = scanner.nextInt();
-        for (MenuItem selectFood : menuItems) {
-
-            if (selectFood.getCategory().equals(category)) {
-                i++;
-                if (num1 == i) {
-                    System.out.println("""
-                            
-                            [ 선택된 메뉴 ]""");
-
-                    System.out.println(i + ". " + selectFood.getName()
-                            + " | W " + selectFood.getPrice() + " | "
-                            + "설명 : " + selectFood.getExplanation());
-
-                    ////////// 장바구니 기능 /////////
-                    System.out.print("""
-                            장바구니에 담겠습니까?
-                            1. 예 2. 아니오
-                            ====== 선택 :""");
-                    int select = scanner.nextInt();
-                    if (select == 1) {
-                        cartItems.put(selectFood.getName(), selectFood.getPrice());
-                        System.out.println("""
-                                장바구니에 추가되었습니다!!
-                                """);
-                        for (String key : cartItems.keySet()) {
-                            if (selectFood.getName().equals(key)) {
-                                countDuplication.put(key, countDuplication.getOrDefault(key,  0) + 1);
-                            }
-                        }
-                        System.out.println("map = " + countDuplication);
-                        return;
-                    } else if (select == 2) {
-                        return;
-                    }
-                }
-            }
-        }
-    }*/
 }

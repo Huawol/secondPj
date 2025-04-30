@@ -1,5 +1,21 @@
 Pj kiosk 단계별 작성
 
+프로젝트하면서 새로 배운것
+1. containsKey : Map 컬랙션에서 키가 있는지 확인하는 함수
+2. Food클래스의 속성과 생성자를 만드는데
+ Cart cart로 속성을 만들고 
+ 생성자로 
+   Food (Cart cart) {
+      this.cart = cart;
+   }
+ 만든다 그 다음에는
+ kiosk 클래스에서
+   Cart cart = new Cart();
+   Food food = new Food(cart);
+ 해서 만들어서 사용 객체 간의 의존관계를 외부에서 주입해주는 설계 패턴
+ 
+
+
 예외 처리 및 문제 오류 해결
 
 Lv 1 

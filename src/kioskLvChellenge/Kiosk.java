@@ -12,7 +12,6 @@ public class Kiosk implements ListMain {
         Food food = new Food(cart);
         food.foodcategory();
 
-
         do {
             mainPrint();
             try {
@@ -39,15 +38,14 @@ public class Kiosk implements ListMain {
                     System.out.println("종료됩니다.");
                     break;
                 case 4:
-                    cart.cartPrintEdit(); // 장바구니 메소드
+                    cart.cartPrintEdit(); // 장바구니 메서드
                     break;
                 case 5:
-                    cart.totalPay();
+                    cart.totalPay(); // 결제 메서드
                     break;
                 default:
                     System.out.println("숫자를 다시 입력해주세요");
             }
-
         }
         while (0 != num1);
     }
@@ -55,7 +53,7 @@ public class Kiosk implements ListMain {
     // 메뉴출력문
     void mainPrint() {
 
-        if (!cartItems.isEmpty()) {
+        if (!cartItems.isEmpty()) { // 장바구니가 안비어있으면 출력
             System.out.print("""
                     
                     [ SHAKESHACK MENU ]
